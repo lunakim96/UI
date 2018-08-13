@@ -1,0 +1,41 @@
+{
+  "name": "UIChallenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/index.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "http": "0.0.0",
+    "path": "^0.12.7",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "sass": "^1.10.4"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "react": "webpack -d --watch",
+    "server": "nodemon server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lunakim96/UIChallenge.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/lunakim96/UIChallenge/issues"
+  },
+  "homepage": "https://github.com/lunakim96/UIChallenge#readme"
+}
