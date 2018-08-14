@@ -1,0 +1,76 @@
+$colors: (
+    primary: #ffffff,
+    secondary: #454444,
+    accent: #D52A2A,
+
+);
+
+$desktop: 1280px;
+$tablet: 600px;
+$mobile: 320px;
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+@mixin mobile {
+    @media (min-width: #{$mobile}) {
+        @content;
+    }
+}
+
+body {
+    background-color: map-get($colors, primary);
+}
+
+//MainView Styling
+
+.headerImage {
+    
+    @include desktop {
+        min-height: 500px; 
+        background-image: url('https://images.unsplash.com/photo-1512204231446-d520ee0a0873?ixlib=rb-0.3.5&s=d7e392f79701cfe02f92f9e97d8b0bde&auto=format&fit=crop&w=1652&q=80');
+        background-size: cover;
+        
+    }
+
+    @include tablet {
+    background-image: url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8d7ed95df2e0d706c5946b7eae536762&auto=format&fit=crop&w=1051&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    }
+
+}
+
+//SearchView Styling
+.grid-container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: auto auto auto;
+    padding: 50px;
+    min-height: 150px;
+}
+
+.grid-item {
+    background-color: map-get($colors, primary);
+    border: 1px solid;
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.grid-pending {
+    text-align: center;
+    font-size: 12px;
+    min-height: 150px;
+    padding-top: 75px;
+}
+
+//DataView Styling

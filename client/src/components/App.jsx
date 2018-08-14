@@ -1,22 +1,39 @@
 import React from 'react';
-import mainView from './mainView.jsx';
+import MainView from './MainView.jsx';
+import SearchView from './SearchView.jsx';
+import DataView from './DataView.jsx';
+import axios from 'axios';
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             movies: [],
-            searchQuery: '',
             movieList: [],
             selectedMovies: []          ,
         };
+        this.searchMovies = this.searchMovies.bind(this);
     }
+    
+searchMovies(movie) {
+    axios.get('/movies/' + movie)
+        .then((res) => {
+            this.setState({
+                movieList: res.data
+            });
+            console.log('here is my movie', this.state.movieList)
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+}
+
     render() {  
         return (
             <div>
-            <mainView />
-            <h1>Title</h1>
-            <p>Hello World!</p>
+            <MainView />
+            <SearchView search={this.searchMovies} movies={this.state.movieList}/>
+            <DataView />
             </div>
         );
     };

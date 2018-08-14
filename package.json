@@ -4,12 +4,15 @@
   "description": "",
   "main": "server/index.js",
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "chart.js": "^2.7.2",
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "http": "0.0.0",
     "path": "^0.12.7",
     "react": "^16.4.2",
+    "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.4.2",
     "sass": "^1.10.4"
   },
