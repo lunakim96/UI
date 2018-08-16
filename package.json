@@ -14,7 +14,8 @@
     "react": "^16.4.2",
     "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.4.2",
-    "sass": "^1.10.4"
+    "sass": "^1.10.4",
+    "semantic-ui-react": "^0.82.2"
   },
   "author": "",
   "license": "ISC",

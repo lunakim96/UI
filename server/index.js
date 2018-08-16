@@ -9,44 +9,23 @@ var server = http.Server(app);
 
 server.listen(port);
 
+//Test Data
 var movieData = [
     {title: 'Harry Potter',
-    views: {'January': 49030,
-            'February': 54893,
-            'March': 2010,
-            'April': 8390,
-            'May': 3390,
-            'June': 20039
-            }
+    views: [49030,54893,2010,8390,3390,20039,1000]
     },
     {title: 'Avengers',
-    views: {'January': 69030,
-            'February': 84893,
-            'March': 7010,
-            'April': 4390,
-            'May': 5390,
-            'June': 10039
-            }
+    views: [69030,84893,7010,5390,10039,20039,2000]
     },
     {title: 'Mission Impossible',
-    views: {'January': 9030,
-            'February': 4893,
-            'March': 75010,
-            'April': 6390,
-            'May': 52390,
-            'June': 100039
-            }
+    views: [9030,4893,75010,6390,52390,100039,3000]
     },
     {title: 'Avengers: Civil War',
-    views: {'January': 1030,
-            'February': 5893,
-            'March': 35010,
-            'April': 9390,
-            'May': 22390,
-            'June': 400039
-            }
+    views: [1030,5893,35010,9390,22390,40039,4000]
     },
-
+    {title: 'Incredibles 2',
+    views: [4030,5493,200,890,4590,2039,5000]
+    },
 ]
 app.use(express.static(__dirname + '/../client/dist'));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -57,15 +36,14 @@ app.use(bodyParser.json());
 
 app.get('/movies/:movie', (req, res) => {
     console.log('HELLO FROM THE SERVER')
-    var matches = [];
+  
     var movieTitle = req.params.movie.toLowerCase();
-    var movieInfo = movieData.find((movie) => {return movie.title.toLowerCase() === movieTitle});
-    matches.push(movieInfo);
-    var found = movieInfo !== undefined;
-    if (found) {
+    var matches = movieData.filter((movie) => {return movie.title.toLowerCase().includes(movieTitle)});
+
+    if (matches.length > 0) {
         res.send(matches);
     } else {
-        res.status(501).send('Could not find that movie');
+        res.status(501).send('Please try again');
     }
 });
 

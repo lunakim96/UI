@@ -1,46 +1,184 @@
 body {
-  background-color: #ffffff;
+  background-color: #FDFFFC;
 }
 
-@media (min-width: 1280px) {
-  .headerImage {
-    min-height: 500px;
-    background-image: url("https://images.unsplash.com/photo-1512204231446-d520ee0a0873?ixlib=rb-0.3.5&s=d7e392f79701cfe02f92f9e97d8b0bde&auto=format&fit=crop&w=1652&q=80");
-    background-size: cover;
-  }
+.fixedbar {
+  background: #D62828;
+  left: 0;
+  padding: .625rem 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
 }
 
-@media (min-width: 600px) {
-  .headerImage {
-    background-image: url("https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8d7ed95df2e0d706c5946b7eae536762&auto=format&fit=crop&w=1051&q=80");
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 300px;
-  }
+.fixedbar .group {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
 }
 
-.grid-container {
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 5px;
-  -ms-grid-columns: auto auto auto;
-      grid-template-columns: auto auto auto;
+.fixedbar .logo {
+  margin: 0 auto 0 0;
+  width: 100%;
+}
+
+.group {
+  margin: 0 auto;
+  max-width: 75rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+
+.logo {
+  background: url("../images/logo.png") center no-repeat;
+  background-size: contain;
+  display: block;
+  max-width: 9.25rem;
+}
+
+.logo__inner {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 27.02703%;
+  position: relative;
+  width: 100%;
+}
+
+.logo__inner > img {
+  left: -9999px;
+  opacity: 0;
+  position: absolute;
+}
+
+.logo--reversed {
+  background-image: url("../images/logo.png");
+}
+
+#headerimage {
+  background-color: #FDFFFC;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  background-image: url("http://www.bang2write.com/wp-content/uploads/2015/08/movie-collage-2010-best-movies-ever-1024x574.jpg");
+}
+
+#headertext {
+  text-shadow: 2px 2px 35px #011627;
+  font-size: 4em;
+  display: inline-block;
+  color: #FDFFFC;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-family: 'Dosis', sans-serif;
+}
+
+div.ui.center.aligned.container {
+  width: 100%;
+  height: 80vh;
+}
+
+.ui.container.searchview {
   padding: 50px;
   min-height: 150px;
+  background-color: #8D99AE;
+  width: 100%;
 }
 
-.grid-item {
-  background-color: #ffffff;
-  border: 1px solid;
-  padding: 10px;
-  font-size: 12px;
+div.ui.segment {
+  color: #000000;
+}
+
+.ui.input {
+  margin-top: 20px;
+  text-align: center;
+  min-width: 50%;
+}
+
+.ui.grid {
+  margin-top: 3rem !important;
+}
+
+.ui.container {
   text-align: center;
 }
 
-.grid-pending {
+div.ui.grid {
+  margin-bottom: 10%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.searchtext {
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FDFFFC;
+}
+
+.ui.button.selectbutton {
+  color: #FDFFFC;
+  min-width: 4em;
+  background: #8ad1cb;
+}
+
+.ui.segment {
+  background: #FDFFFC;
+}
+
+.column.lineData {
+  text-align: left;
+  min-height: 30vh;
+  color: #011627;
+}
+
+.column.lineData h2 {
   text-align: center;
-  font-size: 12px;
-  min-height: 150px;
-  padding-top: 75px;
+  vertical-align: middle;
+  font-size: 24px;
+}
+
+.column.lineData p {
+  text-align: center;
+}
+
+.column.totalData {
+  text-align: center;
+  color: #011627;
+}
+
+.column.totalData h3 {
+  margin-top: 50px;
+}
+
+.addmessage {
+  color: #D62828;
+}
+
+.purchase {
+  color: #8D99AE;
+}
+
+footer {
+  text-align: center;
+  background-color: #011627;
+  min-height: 20vh;
+}
+
+footer p {
+  padding-top: 18vh;
+  color: #FDFFFC;
 }
 /*# sourceMappingURL=style.css.map */

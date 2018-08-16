@@ -1,6 +1,7 @@
 import React from 'react';
 import debounce from 'lodash.debounce';
-import SearchEntryView from './SearchEntryView.jsx';
+import SearchViewEntry from './SearchViewEntry.jsx';
+import { Grid, Container, Icon, Input } from 'semantic-ui-react';
 
 var sampleData = [
     {title: 'Harry Potter',
@@ -62,8 +63,9 @@ class SearchView extends React.Component {
 
 //Handle when user presses the enter key
     handleEnter(e) {
-    
+       
         if(e.keyCode === 13 & !e.shiftKey) {
+            console.log('enter key has been pressed');
             this.props.search(this.state.currentText);
         }
     }
@@ -88,27 +90,30 @@ class SearchView extends React.Component {
 
     if(this.props.movies.length === 0) {
         gridView = (
-            <div className='grid-pending'>
-                <p>please search a movie...</p>
-            </div>
+            <Grid columns={1}>
+                <Grid.Row>
+                    <p className='searchtext'>please search a movie...</p>
+                </Grid.Row>
+            </Grid>
         )
         
     } else {
         gridView = (
-            <div className='grid-container'>
-                {this.props.movies.map((movie, i) => 
-                <SearchEntryView key={i} movie={movie} />
-                )}
-            </div>
+            <Grid stackable columns={4}>
+                <Grid.Row>
+                    {this.props.movies.map((singleMovie, i) => 
+                    <SearchViewEntry key={i} movie={singleMovie} select={this.props.select}/>
+                    )}
+                </Grid.Row>
+            </Grid>
         )
     }
 
         return (
-            <div>
-                <input type="text" placeholder="Search a movie..." onKeyDown={this.handleEnter} onChange={this.handleSearchInput} />
-                <button type="submit" onClick={this.handleSubmit} >search</button>
+            <Container className='searchview'>
+                <Input icon={<Icon name='search' />}  placeholder="Search a movie..." onKeyDown={this.handleEnter} onChange={this.handleSearchInput} onClick={this.handleSubmit} />
                 {gridView}
-            </div>
+            </Container>
         );
     };
 }

@@ -1,12 +1,11 @@
 import React from 'react';
+import { Container} from 'semantic-ui-react';
 
 const MainView = ({props}) => {
    return(
-     <div>
-        <div className="headerImage">
-         <button>search movies</button>
-        </div>
-    </div>
+     <Container id='headerimage'>
+        <h1 id='headertext'>Mitchell Movies</h1>
+    </Container>
    );
 }
 

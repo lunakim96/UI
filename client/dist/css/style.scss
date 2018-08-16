@@ -1,13 +1,19 @@
+//Variables
+
 $colors: (
-    primary: #ffffff,
-    secondary: #454444,
-    accent: #D52A2A,
+    primary: #FDFFFC,
+    secondary: #8D99AE,
+    accent: #D62828,
+    secondaccent: rgb(138, 209, 203),
+    footer: #011627,
 
 );
-
+$logo: url('../images/logo.png');
 $desktop: 1280px;
 $tablet: 600px;
 $mobile: 320px;
+
+//Mixins
 
 @mixin desktop {
     @media (min-width: #{$desktop}) {
@@ -25,52 +31,183 @@ $mobile: 320px;
     }
 }
 
+//Fixed bar and body background
+
 body {
     background-color: map-get($colors, primary);
 }
 
+.fixedbar {
+    background: map-get($colors, accent);
+    left: 0;
+    padding: .625rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    
+    .group {
+        display: -ms-flexbox;
+        display: flex;
+    }
+    .logo {
+        margin: 0 auto 0 0;
+        width: 100%;
+    }
+}
+
+.group {
+    margin: 0 auto;
+    max-width: 75rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+
+
+.logo {
+    background: $logo center no-repeat;
+    background-size: contain;
+    display: block;
+    max-width: 9.25rem;
+}
+
+.logo__inner {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 27.02703%;
+    position: relative;
+    width: 100%;
+}
+.logo__inner>img {
+    left: -9999px;
+    opacity: 0;
+    position: absolute;
+}
+
+.logo--reversed {
+    background-image: $logo;
+}
+
 //MainView Styling
 
-.headerImage {
-    
-    @include desktop {
-        min-height: 500px; 
-        background-image: url('https://images.unsplash.com/photo-1512204231446-d520ee0a0873?ixlib=rb-0.3.5&s=d7e392f79701cfe02f92f9e97d8b0bde&auto=format&fit=crop&w=1652&q=80');
-        background-size: cover;
-        
-    }
-
-    @include tablet {
-    background-image: url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8d7ed95df2e0d706c5946b7eae536762&auto=format&fit=crop&w=1051&q=80');
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 300px;
-    }
-
+#headerimage {
+    background-color: map-get($colors, primary);
+    width: 100%;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    background-image: url('http://www.bang2write.com/wp-content/uploads/2015/08/movie-collage-2010-best-movies-ever-1024x574.jpg');
+}
+#headertext {
+    text-shadow: 2px 2px 35px #011627;
+    font-size: 4em;
+    display: inline-block;
+    color: map-get($colors, primary);
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Dosis', sans-serif;
+}
+div.ui.center.aligned.container {
+    width: 100%;
+    height: 80vh;
 }
 
 //SearchView Styling
-.grid-container {
-    display: grid;
-    grid-gap: 5px;
-    grid-template-columns: auto auto auto;
+
+.ui.container.searchview {
     padding: 50px;
     min-height: 150px;
+    background-color: map-get($colors, secondary);
+    width: 100%;
 }
 
-.grid-item {
-    background-color: map-get($colors, primary);
-    border: 1px solid;
-    padding: 10px;
-    font-size: 12px;
+div.ui.segment {
+    color: #000000;
+}
+
+.ui.input {
+    margin-top: 20px;
+    text-align: center;
+    min-width: 50%;
+}
+
+.ui.grid {
+    margin-top: 3rem !important;
+}
+.ui.container{
     text-align: center;
 }
 
-.grid-pending {
-    text-align: center;
-    font-size: 12px;
-    min-height: 150px;
-    padding-top: 75px;
+div.ui.grid {
+    margin-bottom: 10%;
+    justify-content: center;
+}
+
+.searchtext {
+    font-size: 14px;
+    font-weight: 200;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: map-get($colors, primary);
+}
+
+.ui.button.selectbutton {
+    color: map-get($colors, primary);
+    min-width: 4em;
+    background: map-get($colors, secondaccent);
+}
+
+.ui.segment {
+    background: map-get($colors, primary);
 }
 
 //DataView Styling
+
+
+.column.lineData{
+    text-align: left;
+    min-height: 30vh;
+    color: map-get($colors, footer);
+    h2 {
+        text-align: center;
+        vertical-align: middle;
+        font-size: 24px;
+    };
+    p {
+        text-align: center;
+    }
+}
+.column.totalData {
+    text-align: center;
+    color: map-get($colors, footer);
+    h3 {
+        margin-top: 50px;
+    }
+}
+
+.addmessage {
+    color: map-get($colors, accent )
+}
+
+.purchase {
+    color: map-get($colors, secondary);
+}
+//footer
+
+footer {
+    text-align: center;
+    background-color: map-get($colors, footer);
+    min-height: 20vh;
+    p {
+        padding-top: 18vh;
+        color: map-get($colors, primary);
+    }
+}
