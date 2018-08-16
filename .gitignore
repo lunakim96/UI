@@ -2,3 +2,5 @@
 client/dist/bundle.js
 .npm
 node_modules/
+process.env
+
